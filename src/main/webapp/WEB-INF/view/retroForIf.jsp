@@ -26,7 +26,7 @@
             <h2>Retrospective</h2>
             <hr/>
 
-            <h4>1. if 文を使って数字を当ててみよう </h4>
+            <h4>沼田先生。大好きです。 </h4>
             <form action="retro_forif" method="post">
                 <label>input：</label>
                 <input type="number" name="input1" size="2" value="${input1}" min = "0" max = "9" required placeholder="0-9" />

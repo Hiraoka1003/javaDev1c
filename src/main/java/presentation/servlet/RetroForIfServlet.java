@@ -17,7 +17,7 @@ import business.service.RetroForIfService;
 /**
  * {@link SampleMemoServlet}
  */
-@WebServlet("/retro_forif")
+@WebServlet("/retro_forif_prapra")
 public class RetroForIfServlet extends HttpServlet {
 
 	private RetroForIfService service = new RetroForIfService();
@@ -28,7 +28,7 @@ public class RetroForIfServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String view = "/WEB-INF/view/retroForIf.jsp";
+		String view = "/WEB-INF/view/sample.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 		dispatcher.forward(request, response);
 	}
