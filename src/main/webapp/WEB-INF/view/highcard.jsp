@@ -26,84 +26,41 @@
 	<main>
 	<div class="container workspace">
 
-		<!------------------ ここから↓だけ気にしといてね ---------------->
-
-		<h2>HighCard</h2>
-
-		<form action="./highcard" method="POST">
-			賭け金<input type="text" name="kake"><br>
-			予想<input type="text" name="yosou"><br>
-			プレイヤー名<input type="text" name="player"><br>
-
-			<!----------- 10/18追加分 ----------->
-
-			<hr>
-			<h3>10/18追加分</h3>
-
-			出る数字の予想<input type="number" name="hitNumber" value="1"><br>
-
-			 <input type="submit"value="送信する。">
-		</form>
-
-		<hr>
-
 		<!---Servletから送られたデータを受け取るゾーン -->
 		<%
 		  request.setCharacterEncoding("UTF-8");
-		  String kakekin = request.getParameter("kake");
-		  String yosou = request.getParameter("yosou");
-		  String player = request.getParameter("player");
-		  String hitNum = request.getParameter("hitNumber");
 
-		  String dokuji = (String)request.getAttribute("dokuji");
-		  String tutorial = (String)request.getAttribute("tutorial");
-		  String dokujiPra1 = (String)request.getAttribute("dokujiPra1");
-		  String dokujiPra2 = (String)request.getAttribute("dokujiPra2");
-		  String dokuji0you1 = (String)request.getAttribute("dokuji0you1");
+		  String choice = (String)request.getParameter("choice");
+
 		%>
 
-		<!-- 受け取ったデータを表示するゾーン -->
+		<h3>平岡【10月25日分】</h3>
+		あなたが選んだカードは：<%= choice %><br>
 
-		かけ金は：<%= kakekin %><br>
+		<div id="board" style="width:1200px; height:600px; border:solid; border-color:brown; background-color:#2e8b57;">
 
-		予想は：<%= yosou %><br>
+			<!----------- 1のカード--------- -->
+			<a href="./highcard?choice=1&category=clover">
+				<img style="width:10%"src="./assets/cards/1.png">
+			</a>
 
-		プレイヤー名は：<%= player %><br><br><br>
+			<!----------- 2のカード--------- -->
+			<a href="./highcard?choice=2">
+				<img style="width:10%"src="./assets/cards/2.png">
+			</a>
 
-		<h3>
-		【10/18 演習問題】<br>
-		</h3>
-		独自定義：<%= dokuji %><br>
+			<!----------- 3のカード--------- -->
+			<a href="./highcard?choice=3">
+				<img style="width:10%"src="./assets/cards/3.png">
+			</a>
 
-		チュートリアル：<%= tutorial %><br>
-
-		練習問題①：<%= dokujiPra1 %><br>
-
-		練習問題②：<%= dokujiPra2 %><br>
-
-		応用問題①：<%= dokuji0you1 %><br>
-
-		応用問題②：<br>
-
-		<hr>
-		3回後の授業で触る。<br>
-		<div id="board" onclick="btouch()"style="width:1200px; height:600px; border:solid; border-color:brown; background-color:#2e8b57;">
-			<img style="width:100%"src="https://cdn.pixabay.com/photo/2015/08/11/11/58/atlasnye-884206_1280.png">
 		</div>
-
-
-		<!------------------ ここから↑だけ気にしといてね --------------->
 		<br><br><br>.
 	</div>
 	</main>
 
 	<script src="<c:url value="/assets/bootstrap.bundle.min.js" />"></script>
 	<script src="<c:url value="/assets/script.js" />"></script>
-	<script>
-		function btouch(){
-			alert('機能は皆が作るよーーー。まだ何も起こらないよーーー')
-		}
-	</script>
 </body>
 
 </html>
